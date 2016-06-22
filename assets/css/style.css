@@ -8,10 +8,12 @@
 	margin: 0px auto;
 }
 
-
 header {
+	font-family: 'Indie Flower', cursive;
 	text-align: center;
+	color: white;
 }
+
 
 #search-area {
 	text-align: center;
