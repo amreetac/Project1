@@ -208,7 +208,7 @@ FlowerPower = function()
 								rowIndex++;
 							}*/
 							var div = $("<div class='col-xs-6 col-md-3'>").addClass("image");
-							var atag = $("<a>").addClass("thumbnail").attr('href', "#");
+							var atag = $("<a>").addClass("thumbnail");
 							var img = $('<img>').attr('src', url);
 							img.attr("id",anId);
 							atag.append(img);
@@ -228,6 +228,8 @@ FlowerPower = function()
 					    });
 
 				}
+
+				
 		    }, function(response) {
 		        console.log(response);
 		    }, function() {
