@@ -228,6 +228,8 @@ FlowerPower = function()
 					    });
 
 				}
+
+				
 		    }, function(response) {
 		        console.log(response);
 		    }, function() {

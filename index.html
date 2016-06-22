@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Need Name!!!</title>
+  <title>Flower Power!</title>
 
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans|Indie+Flower|Anton|Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <meta charset="UTF-8">
@@ -11,19 +13,21 @@
   <style>
     .carousel-inner > .item > img,
     .carousel-inner > .item > a > img {
-        width: 100%;
+        width: 72%;
         margin: auto;
     }
   </style>
 </head>
-<body>
+<body onload="disco()">
 
 <div class="container">
 
   <header>
     <!-- We need a name for our project! -->
     <h1>Plant ID Project</h1>
-    <h6>Powered by JustVisual</h6>
+    <h5>Powered by JustVisual</h5>
+
+    <h7> <a href="#toGoDown">ID your flowers!</a> </h7>
   </header>
 
 
@@ -116,11 +120,12 @@
   </div>   
     <!-- JUMBOTRON END-->
 
+<br>
 
-
+  <A NAME="toGoDown">
   <div class="panel panel-default">
     <!-- Default panel contents -->
-    <div class="panel-heading">Panel heading</div>
+    <!--<div class="panel-heading">Panel heading</div> -->
     <div class="panel-body">
 
     <img id="flower-img" src="assets/images/drag-here.png" alt="..." class="img-rounded">
@@ -134,10 +139,8 @@
   <!-- Search Area -->
     <div id="search-area">
       <!-- Instructions are TBD once we come to a conclusion on how exactly it will work -->
-      <label for="basic-url">[Instructions go here]: dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat.</label>
+      <label for="basic-url">Instructions: Enter your Flickr id to display your beautiful
+      flowers. Drag and drop them on the above box to the left. The right box is where the magic happens!</label>
       <form class="form-inline">
         <div class="form-group">
           <div class="input-group">
@@ -152,10 +155,15 @@
       <!-- Images will load here ... Divs can either be appended w/ Jquery, or we can leave place holders here -->
       <div class="row" id="image-results">
         
-        </div>
+        </div>  
     </div>
 
     </div>
+
+
+    <br>
+
+
   </div>
   
 
@@ -164,5 +172,135 @@
   <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script type="text/javascript" src="assets/javascript/flower.js" ></script>
+  <script language="JavaScript">
+<!--
+//you can assign the initial color of the background here. Reference: http://www.htmlbestcodes.com/Disco_background_effect.htm
+r=255;
+g=255;
+b=255;
+flag=0;
+t=new Array;
+o=new Array;
+d=new Array;
+
+function hex(a,c)
+{
+t[a]=Math.floor(c/16)
+o[a]=c%16
+switch (t[a])
+{
+case 10:
+t[a]='A';
+break;
+case 11:
+t[a]='B';
+break;
+case 12:
+t[a]='C';
+break;
+case 13:
+t[a]='D';
+break;
+case 14:
+t[a]='E';
+break;
+case 15:
+t[a]='F';
+break;
+default:
+break;
+}
+switch (o[a])
+{
+case 10:
+o[a]='A';
+break;
+case 11:
+o[a]='B';
+break;
+case 12:
+o[a]='C';
+break;
+case 13:
+o[a]='D';
+break;
+case 14:
+o[a]='E';
+break;
+case 15:
+o[a]='F';
+break;
+default:
+break;
+}
+}
+
+function ran(a,c)
+{
+if ((Math.random()>2/3||c==0)&&c<255)
+{
+c++
+d[a]=2;
+}
+else
+{
+if ((Math.random()<=1/2||c==255)&&c>0)
+{
+c--
+d[a]=1;
+}
+else d[a]=0;
+}
+return c
+}
+function do_it(a,c)
+{
+if ((d[a]==2&&c<255)||c==0)
+{
+c++
+d[a]=2
+}
+else
+if ((d[a]==1&&c>0)||c==255)
+{
+c--;
+d[a]=1;
+}
+if (a==3)
+{
+if (d[1]==0&&d[2]==0&&d[3]==0)
+flag=1
+}
+return c
+}
+function disco()
+{
+if (flag==0)
+{
+r=ran(1, r);
+g=ran(2, g);
+b=ran(3, b);
+hex(1,r)
+hex(2,g)
+hex(3,b)
+document.body.style.background="#"+t[1]+o[1]+t[2]+o[2]+t[3]+o[3]
+flag=50
+}
+else
+{
+r=do_it(1, r)
+g=do_it(2,g)
+b=do_it(3,b)
+hex(1,r)
+hex(2,g)
+hex(3,b)
+document.body.style.background="#"+t[1]+o[1]+t[2]+o[2]+t[3]+o[3]
+flag--
+}
+
+setTimeout('disco()',50)
+}
+//-->
+</script>
 </body>
 </html>
