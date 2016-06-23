@@ -11,11 +11,11 @@ FlowerPower = function()
 	var wikiLink =  $("#wiki-link")
 	searchButton.on("click", function() {GetFlkrPhotosByUserId();});
 
-	var flowerUrlP1 = "http://garden.vsapi01.com/api-search/by-url?url="
+	var flowerUrlP1 = "https://garden.vsapi01.com/api-search/by-url?url="
 	var flowerUrlP2 = "&n-results=20&image-origin=web&user-id=dc541307-6bd0-fe2b-16f1-64a61f01049f&apiid=justvisual-demo-id&apikey=justvisul-demo-key";
 	var wikiGetPageNameUrlP1 =  "https://en.wikipedia.org/w/api.php?action=opensearch&search=";
 	var wikiGetPageNameUrlP2  = "&limit=1&namespace=0&format=json"
-	var wikiGetPageCommonNamePageUrlP1 =  "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&exlimit=max&explaintext&format=jsonfm&titles=";
+	var wikiGetPageCommonNamePageUrlP1 =  "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exlimit=max&explaintext&format=jsonfm&titles=";
 	var wikiGetPageCommonNamePageUrlP2  = "&format=json&prop=extracts&callback=?"
 	var flkrPhraseSearchUrlP1 =  "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=ec5ced9cee7053f8b020c15d45186abd&tags=";
 	var flkrPhraseSearchUrlP2 =  "&per_page=500&format=json&nojsoncallback=1";
@@ -82,7 +82,7 @@ FlowerPower = function()
 			    }catch(ex){
 	    			flowerInfo.text("Wiki title page look up API parse failure.");
 	    		}
-		    	$.ajax({url: "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&exlimit=max&explaintext&format=jsonfm&titles="+title+"&format=json&prop=extracts&callback=?",
+		    	$.ajax({url: "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exlimit=max&explaintext&format=jsonfm&titles="+title+"&format=json&prop=extracts&callback=?",
 					method: "GET",
 					dataType: "jsonp"
 					}).then(
@@ -137,7 +137,7 @@ FlowerPower = function()
 											    	var url = array[0];
 											    	var index = url.lastIndexOf("/");
 											    	var title = url.substring(index+1);
-											    	 $.ajax({url: "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&exlimit=max&explaintext&format=jsonfm&titles="+title+"&format=json&prop=extracts&callback=?",
+											    	 $.ajax({url: "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exlimit=max&explaintext&format=jsonfm&titles="+title+"&format=json&prop=extracts&callback=?",
 														method: "GET",
 														dataType: "json"
 														}).then(
@@ -211,7 +211,7 @@ FlowerPower = function()
 																flowerInfo.text("Wiki science name page look up API parse failure.");
 															}
 
-												    	//http://garden.vsapi01.com/api-search/by-url?url=http%3A%2F%2Fdemo.justvisual.com%2Fimg%2Fgallery%2FImageGarden2.jpg&n-results=20&image-origin=web&user-id=dc541307-6bd0-fe2b-16f1-64a61f01049f&apiid=justvisual-demo-id&apikey=justvisul-demo-key
+												    	//https://garden.vsapi01.com/api-search/by-url?url=http%3A%2F%2Fdemo.justvisual.com%2Fimg%2Fgallery%2FImageGarden2.jpg&n-results=20&image-origin=web&user-id=dc541307-6bd0-fe2b-16f1-64a61f01049f&apiid=justvisual-demo-id&apikey=justvisul-demo-key
 													    }, function(response) {
 													        console.log(response);
 													    }, function() {
@@ -254,7 +254,7 @@ FlowerPower = function()
 						}catch(ex){
 								flowerInfo.text("Wiki common name page look up API parse failure. Name = " + commonName);
 						}
-			    	//http://garden.vsapi01.com/api-search/by-url?url=http%3A%2F%2Fdemo.justvisual.com%2Fimg%2Fgallery%2FImageGarden2.jpg&n-results=20&image-origin=web&user-id=dc541307-6bd0-fe2b-16f1-64a61f01049f&apiid=justvisual-demo-id&apikey=justvisul-demo-key
+			    	//https://garden.vsapi01.com/api-search/by-url?url=http%3A%2F%2Fdemo.justvisual.com%2Fimg%2Fgallery%2FImageGarden2.jpg&n-results=20&image-origin=web&user-id=dc541307-6bd0-fe2b-16f1-64a61f01049f&apiid=justvisual-demo-id&apikey=justvisul-demo-key
 				    }, function(response) {
 				        console.log(response);
 				    }, function() {
@@ -392,7 +392,7 @@ FlowerPower = function()
 							    function(response) {
 							    	console.log(response);
 							    			var url = response.sizes.size[4].source;
-							    		 	$.ajax({url: "http://garden.vsapi01.com/api-search/by-url?url="+url+"&n-results=20&image-origin=web&user-id=dc541307-6bd0-fe2b-16f1-64a61f01049f&apiid=justvisual-demo-id&apikey=justvisul-demo-key",
+							    		 	$.ajax({url: "https://garden.vsapi01.com/api-search/by-url?url="+url+"&n-results=20&image-origin=web&user-id=dc541307-6bd0-fe2b-16f1-64a61f01049f&apiid=justvisual-demo-id&apikey=justvisul-demo-key",
 											method: "GET"
 											}).then(
 										    function(response) {
