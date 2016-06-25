@@ -1,3 +1,6 @@
+//We created functions nested under FlowerPower. We are using Flickr API, JustVisual API and 
+// Wiki API.
+
 FlowerPower = function()
 {
 	var searchButton = $("#searchBtn");
@@ -24,7 +27,7 @@ FlowerPower = function()
 
 	HandleDropEvent=function(event, ui){
 
-		var draggable = ui.draggable;
+		var draggable = ui.draggable;  //Function to drag pictures to box on main page.
   		dropZone.attr("src",draggable.attr("src"));
   		var commonName = "daylilies";
   		$.ajax({url: flowerUrlP1 + draggable.attr("src") + flowerUrlP2,
@@ -215,13 +218,13 @@ FlowerPower = function()
 													    }, function(response) {
 													        console.log(response);
 													    }, function() {
-													        //progress update do something
+													        
 													    });
 										
 											    }, function(response) {
 											        console.log(response);
 											    }, function() {
-											        //progress update do something
+											    
 											    });
 								}else{
 									console.log(wikiText);
@@ -258,7 +261,7 @@ FlowerPower = function()
 				    }, function(response) {
 				        console.log(response);
 				    }, function() {
-				        //progress update do something
+				        //
 				    });
 	
 		    }, function(response) {
@@ -286,7 +289,7 @@ FlowerPower = function()
 
 	}
 
-	var dropZone = $("#flower-img");
+	var dropZone = $("#flower-img");  //Drop zone for the pictures
 	dropZone.droppable( {
     	drop: HandleDropEvent
   	});
@@ -304,7 +307,7 @@ FlowerPower = function()
 
   	}
 
-	GetFlkrPhotosByUserId=function(userId){
+	GetFlkrPhotosByUserId=function(userId){    //Using Flickr id to get photos
 		var flkrUrl;
 		photoTable .empty()
 		searchKey = searchValue.val();
@@ -372,7 +375,7 @@ FlowerPower = function()
 
 	}
 
-	GetFlkrPhotosByPhrase=function(phrase){
+	GetFlkrPhotosByPhrase=function(phrase){   //Allows search item by phrase on Flickr
 
 	}
 
