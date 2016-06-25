@@ -1,3 +1,4 @@
+/*Style for UL*/
 .cb-slideshow,
 .cb-slideshow:after { 
     position: fixed;
@@ -7,10 +8,8 @@
     left: 0px;
     z-index: -99;
 }
-.cb-slideshow:after { 
-    content: '';
-}
 
+/*Stretches carousel images to cover the whole page, animation takes 36s*/
 .cb-slideshow li span { 
     width: 100%;
     height: 100%;
@@ -26,6 +25,7 @@
     animation: imageAnimation 36s linear infinite 0s; 
 }
 
+/*Positions the title in center of page, and on top of carousel*/
 .cb-slideshow li div { 
     z-index: 1000;
     position: absolute;
@@ -35,10 +35,10 @@
     text-align: center;
     opacity: 0;
     color: #F8F8F8;
-    animation: titleAnimation 36s linear infinite 0s;
     text-shadow: 2px 2px 2px #000000;
 }
 
+/*Adds images to the empty html spans, and specifies time for each image*/
 .cb-slideshow li:nth-child(1) span { 
     background-image: url("../images/field1.jpg") 
 }
@@ -63,6 +63,7 @@
     animation-delay: 30s; 
 }
 
+/*Images appear 6 seconds after the previous one*/
 .cb-slideshow li:nth-child(2) div { 
     animation-delay: 6s; 
 }
@@ -87,26 +88,9 @@
     100% { opacity: 0 }
 }
 
+/*For browsers that do not support animations just show the last image*/
 .no-cssanimations .cb-slideshow li span{
 	opacity: 1;
-}
-
-@keyframes imageAnimation { 
-	0% {
-	    opacity: 0;
-	    animation-timing-function: ease-in;
-	}
-	8% {
-	    opacity: 1;
-	    animation-timing-function: ease-out;
-	}
-	17% {
-	    opacity: 1;
-	}
-	25% {
-	    opacity: 0;
-	}
-	100% { opacity: 0 }
 }
 
 li {

@@ -10,78 +10,58 @@
   <meta charset="UTF-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <style>
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-        width: 68%;
-        margin: auto;
-    }
-  </style>
+
 </head>
 <body onload="disco()">
 
 <div class="container">
 
+<!-- Header Div -->
   <header>
-    <!-- We need a name for our project! -->
     <h1>Plant ID Project</h1>
     <h5>Powered by JustVisual</h5>
-
     <h3> <a href="#toGoDown">ID your flowers!</a> </h3>
   </header>
 
   <A NAME="toGoDown">
   <div class="panel panel-default">
-    <!-- Default panel contents -->
     <!--<div class="panel-heading">Panel heading</div> -->
     <div class="panel-body">
-
-    <img id="flower-img" src="assets/images/drag-here.png" alt="..." class="img-rounded">
-
-    <!-- List group -->
+      <img id="flower-img" src="assets/images/drag-here.png" alt="..." class="img-rounded">
+    <!-- Textarea where flower information appears -->
     <div id="info">
-      <textarea id="flower-info">
-      </textarea>
+      <textarea id="flower-info"></textarea>
     </div>
 
-  <!-- Search Area -->
+    <!-- Search Area -->
     <div id="search-area">
-      <!-- Instructions are TBD once we come to a conclusion on how exactly it will work -->
-      <label for="basic-url">Instructions: Enter your Flickr id to display your beautiful
-      flowers. Drag and drop them on the above box to the left. The right box is where the magic happens!</label>
-      <form class="form-inline">
-        <div class="form-group">
-          <div class="input-group">
-            <input type="text" class="form-control" id="searchValue">
+      <label for="basic-url">Instructions: Enter your Flickr id to display your beautifulflowers. Drag and drop them on the above box to the left. The right box is where the magic happens!</label>
+        <form class="form-inline">
+          <div class="form-group">
+            <!-- Search box -->
+            <div class="input-group">
+              <input type="text" class="form-control" id="searchValue">
+            </div>
           </div>
-        </div>
-        <button type="button" class="btn btn-success" id="searchBtn"> <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> Search</button>
-      </form>
-
+          <!-- Search button -->
+          <button type="button" class="btn btn-success" id="searchBtn"> <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> Search</button>
+        </form>
     </div>
     
-      <!-- Images will load here ... Divs can either be appended w/ Jquery, or we can leave place holders here -->
-      <div class="row" id="image-results">
-        
+        <div class="row" id="image-results">
+        <!-- Images load here -->
         </div>  
+
+      </div>
     </div>
-
-    </div>
-
-
     <br>
-
-
   </div>
-  
-
-  
 </div>
   <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script type="text/javascript" src="assets/javascript/flower.js" ></script>
   <script language="JavaScript">
-<!--
+/*Below is the code that changes the background color*/
 //you can assign the initial color of the background here. Reference: http://www.htmlbestcodes.com/Disco_background_effect.htm
 r=255;
 g=255;
